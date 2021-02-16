@@ -1,0 +1,17 @@
+[www]
+user = root
+group = root
+listen = 9000
+listen.owner = www-data
+group = root
+pm = dynamic
+pm.max_children = {{ getv "/php/pm.max_children" "20" }}
+pm.start_servers = {{ getv "/php/pm.start_servers" "2" }}
+pm.min_spare_servers = {{ getv "/php/pm.min_spare_servers" "2" }}
+pm.max_spare_servers = {{ getv "/php/pm.max_spare_servers" "4" }}
+php_admin_value[disable_functions] = exec,passthru,shell_exec,system
+php_admin_flag[allow_url_fopen] = on
+php_admin_value[date.timezone] = UTC
+clear_env = no
+catch_workers_output = yes
+request_terminate_timeout = 300

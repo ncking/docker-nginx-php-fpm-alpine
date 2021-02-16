@@ -1,0 +1,7 @@
+[template]
+mode = "0644"
+src = "php.ini.tmpl"
+dest = "/etc/php7/php.ini"
+keys = [
+  "/php"
+]
