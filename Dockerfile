@@ -16,9 +16,19 @@ RUN apk add --no-cache \
 
 FROM alpine:3.13.1
 
-#COPY docker/config/nginx.conf /etc/nginx/nginx.conf
-RUN apk add --no-cache nginx libpng composer;     
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+LABEL maintainer="gituser <gituser@raizmedia.co.uk>" \
+    architecture="amd64/x86_64" \
+    nginx-version="1.18.0" \
+    alpine-version="3.13.1" \
+    build="23-Feb-2021" \
+    org.opencontainers.image.title="alpine-nginx" \
+    org.opencontainers.image.description="Nginx PHP 7.4 running on Alpine Linux" \
+    org.opencontainers.image.authors="nigel <nigel@raizmedia.co.uk>" \
+    org.opencontainers.image.vendor="Raiz Systems" \
+    org.opencontainers.image.version="v1.0.5" \
+    org.opencontainers.image.url="https://hub.docker.com/repository/docker/raiz/nginx-php-fpm-alpine" \
+    org.opencontainers.image.source="https://hub.docker.com/repository/docker/raiz/nginx-php-fpm-alpine" 
+   
 
 # http://dl-cdn.alpinelinux.org/alpine/v3.12/community/x86_64/
 RUN apk --update add \
@@ -32,20 +42,20 @@ RUN apk --update add \
     #php7-fileinfo \
     php7-fpm \
     #php7-gettext \
-    #php7-gd \
-    #php7-iconv \
-    #php7-intl \
+    php7-gd \
+    php7-iconv \
+    php7-intl \
     php7-json \
     php7-mbstring \
     #php7-mcrypt \
     php7-mysqlnd \
     php7-opcache \
-    #php7-openssl \
+    php7-openssl \
     #php7-pdo \
     #php7-pdo_mysql \
     #php7-pdo_pgsql \
     #php7-pdo_sqlite \
-    #php7-phar \
+    php7-phar \
     #php7-posix \
     #php7-simplexml \
     #php7-session \
@@ -59,6 +69,11 @@ RUN apk --update add \
     && rm -rf /var/cache/apk/*
 RUN mkdir -p /etc/php7/pool.d
 RUN mkdir -p /run/php
+
+
+#COPY docker/config/nginx.conf /etc/nginx/nginx.conf
+RUN apk add --no-cache nginx libpng composer;     
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 
 # Add wait-for-it. The Apline version
