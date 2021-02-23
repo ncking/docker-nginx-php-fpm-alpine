@@ -1,0 +1,4 @@
+# Docker PHP 7.4, Nginx, Composer on Alpine Linux
+
+[![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/raiz/nginx-php-fpm-alpine?style=for-the-badge)](https://hub.docker.com/repository/docker/raiz/nginx-php-fpm-alpine) [![Alpine 3.13.1](https://img.shields.io/badge/alpine-3.13.1-blue.svg?logo=alpine-linux&style=for-the-badge)](https://hub.docker.com/repository/docker/raiz/nginx-php-fpm-alpine) [![NGINX version](https://img.shields.io/badge/nginx-1.18.0-brightgreen.svg?&logo=nginx&logoColor=white&style=for-the-badge)](https://hub.docker.com/repository/docker/raiz/nginx-php-fpm-alpine) [![php-fpm v7.4.15](https://img.shields.io/badge/php--fpm-7.4.15-blue.svg?&logo=php&logoColor=white&style=for-the-badge)](https://hub.docker.com/repository/docker/raiz/nginx-php-fpm-alpine) [![license MIT](https://img.shields.io/badge/license-MIT-blue.svg?&style=for-the-badge)
+](https://hub.docker.com/repository/docker/raiz/nginx-php-fpm-alpine)
